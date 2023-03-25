@@ -1,0 +1,164 @@
+/* Header */
+
+header{
+    background-image: url(../images/chef-2585791.jpg);
+}
+
+
+/* About */
+
+.about-image{
+    width: 50%;
+}
+
+.about-image img{
+    width: 100%;
+    height: 95%;
+    margin-top: 1.1rem;
+}
+
+
+/* Menu */
+
+.menu{
+    background-image: url(../images/tryitnow_GettyImages-1127515284_HR.jpg);
+    color: #fff;
+}
+
+.menu::before {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.menu ul{
+    justify-content: center;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.menu li a {
+    padding: 15px 13px;
+    font-size: 2.2rem;
+    transition: color .4s;
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu li a:hover{
+    color: #FFC515;
+}
+
+.menu .products{
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+}
+
+.menu .products .row{
+    width: 100%;
+    height: 105px;
+    margin-bottom: 60px;
+}
+
+.menu .products .row:last-child{
+    margin-bottom: 0;
+}
+
+.menu .products .row .col{
+    width: 50%;
+    height: 100%;
+    color: #fff;
+}
+
+.menu .products .row .col img{
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.menu .products .food-information{
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu .products .food-name{
+    font-size: 2.5rem;
+    font-family: 'Zilla Slab', serif;
+    margin-bottom: 20px;
+}
+
+.menu .products .food-price{
+    font-size: 1.5rem;
+    font-family: 'Roboto', serif;
+}
+
+
+/* Gallery */
+
+.images{
+    width: 100%;
+    margin-top: 40px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+}
+
+.images .image{
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.image .border {
+    width: 370px;
+    height: 370px;
+    border: 2px solid #ffc515;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+}
+
+.image .border::before, .border::after {
+    position: absolute;
+    background: #fff;
+    z-index: -1;
+    transition: .8s;
+    content: '';
+}
+
+.image .border::before {
+    width: 200px;
+    height: 370px;
+}
+
+.image .border::after {
+  width: 370px;
+  height: 200px;
+}
+
+.image .border:hover::before {
+  width: 0px;
+  background: #fff;
+}
+
+.image .border:hover::after {
+  height: 0px;
+  background: #fff;
+}
+
+.image .border:hover {
+  background: #fff;
+}
+
+.image img{
+    width: 350px;
+    height: 350px;
+}
+
+
+
+
+
+
