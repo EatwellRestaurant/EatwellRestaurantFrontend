@@ -10,6 +10,10 @@ header#lahmacunlar{
     background-image: url(../images/lahmacun-background.webp);
 }
 
+header#durumler{
+    background-image: url(../images/durum-background.jpg);
+}
+
 #foods .products{
     color: #000;
     margin-top: 50px;
