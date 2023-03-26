@@ -30,6 +30,10 @@ header#kahvaltilar{
     background-image: url(../images/kahvalti-background.jpg);
 }
 
+header#tatlilar{
+    background-image: url(../images/tatli-background.jpeg);
+}
+
 #foods .products{
     color: #000;
     margin-top: 50px;
