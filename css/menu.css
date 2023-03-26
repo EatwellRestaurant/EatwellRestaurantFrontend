@@ -2,6 +2,16 @@ header{
     background-image: url(../images/menu.jpg);
 }
 
+header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .75);
+}
+
 .menus{
     margin-top: 50px;
 }
@@ -16,7 +26,7 @@ header{
 .menu-image{
     position: relative;
     border-radius: 25px;
-    box-shadow: 0 0 15px #000;
+    box-shadow: 0 0 13px #000;
 }
 
 .menu-image img{

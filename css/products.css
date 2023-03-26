@@ -1,0 +1,33 @@
+header#kebablar{
+    background-image: url(../images/kebap-background.jpg);
+}
+
+header#pideler{
+    background-image: url(../images/pide-background.jpg);
+}
+
+header#lahmacunlar{
+    background-image: url(../images/lahmacun-background.webp);
+}
+
+#foods .products{
+    color: #000;
+    margin-top: 50px;
+    justify-content: space-between;
+    grid-template-rows: 180px 180px;
+    row-gap: 30px;
+}
+
+#foods .products .col img{
+    min-width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    margin-right: 20px;
+    padding: 2px;
+    border: 3px solid #ffc515;
+}
+
+
+
+
+

@@ -35,6 +35,11 @@ header{
     margin-top: 20px;
 }
 
+.menu ul li{
+    width: 140px;
+    text-align: center;
+}
+
 .menu li a {
     padding: 15px 13px;
     font-size: 2.2rem;
@@ -53,7 +58,7 @@ header{
     margin-top: 20px;
     color: #fff;
     display: grid;
-    justify-content: space-between;
+    justify-content: space-around;
     grid-template-columns: auto auto;
     grid-template-rows: 105px 105px;
     row-gap: 60px;
