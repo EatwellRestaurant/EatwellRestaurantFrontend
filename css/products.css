@@ -14,6 +14,10 @@ header#durumler{
     background-image: url(../images/durum-background.jpg);
 }
 
+header#corbalar{
+    background-image: url(../images/corba-background.jpg);
+}
+
 #foods .products{
     color: #000;
     margin-top: 50px;
