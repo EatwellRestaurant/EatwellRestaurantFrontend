@@ -1,4 +1,5 @@
 const apiUrl = "https://localhost:44398/api/branchs/getall";
+const urlContoller = ""
 
 async function getData() {
     // API'ye istek gönderme
