@@ -1,3 +1,19 @@
+const apiUrl = "https://localhost:44398/api/branchs/getall";
+
+async function getData() {
+    // API'ye istek gönderme
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    // API'den veri alma
+    console.log(data);
+}
+
+getData();
+
+
+
+
 $(document).ready(function($) {
 
 	"use strict";
