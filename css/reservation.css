@@ -105,7 +105,7 @@ form{
 }
 
 .datetime input{
-    width: 30%;
+    width: 100%;
     padding: 8px;
     margin-right: 12px;
 }

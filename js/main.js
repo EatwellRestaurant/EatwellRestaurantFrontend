@@ -13,13 +13,55 @@ async function getData() {
 getData();
 
 
+//datetime - format
+function format(inputDate) {
+    let date, month, year;
+
+    date = inputDate.getDate();
+    month = inputDate.getMonth() + 1; 
+    year = inputDate.getFullYear();
+
+    //Bu değerlere sahip olduğunuzda, gerektiğinde aya ve tarihe 0 ekleyebilirsiniz:
+    if (date < 10) {
+        date = '0' + date;
+    }
+    
+    if (month < 10) {
+        month = '0' + month;
+    }
+    
+    date = date.toString().padStart(2, '0');  //İlk parametrede string'in kaç karakter uzunluğunda olacağını,
+                                                
+    month = month.toString().padStart(2, '0');  //ikinci parametrede ise doldurulacak dizeyi belirleriz.
+    //Bu durumda, ayın veya tarihin değerinin her zaman iki basamaklı olmasını isteriz. 
+    //Değer ya 0 ile başlamalı ya da doğal olarak iki basamaklı olmalıdır.
+
+    return `${date}/${month}/${year}`;
+}
 
 
+//datetime min-max
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+let element = document.getElementById("datePicker");
+element.min = new Date().toISOString().split("T")[0];
+element.max = new Date().addDays(35).toISOString().split("T")[0];
+
+element.innerHTML = format(element.value);
+
+
+
+
+
+// navbar - scroll
 $(document).ready(function($) {
 
 	"use strict";
-    
-    // scroll
+
     var scrollWindow = function() {
         $(window).scroll(function(){
             var $w = $(this),
@@ -64,7 +106,7 @@ $(document).ready(function($) {
 
 
 
-
+//scroll-up
 let calcScrollValue = () =>{
     let scrollProgress = document.getElementById("progress");
     let progressValue = document.getElementById("progress-value");
