@@ -56,22 +56,22 @@
 
           <form>
             <div class="reservation-box">
-              <input type="text" placeholder="Ad Soyad" required>
+              <input id="name-surname" type="text" placeholder="Ad Soyad" required>
               <i class="fa-solid fa-user fa-2xl"></i>
             </div>
 
             <div class="reservation-box">
-              <input type="email" placeholder="E-posta" required>
+              <input id="email" type="email" placeholder="E-posta" required>
               <i class="fa-solid fa-envelope fa-2xl"></i>
             </div>
 
             <div class="reservation-box">
-              <input type="tel" placeholder="Telefon" required>
+              <input id="phone" type="tel" placeholder="Telefon" required>
               <i class="fa-solid fa-phone fa-2xl"></i>
             </div>
 
             <div class="reservation-box">
-              <select name="branches" required>
+              <select id="branch" name="branches" required>
                 <option value="default">Şubeler</option>
                 <option value="mr.umut">Mr. Umut</option>
                 <option value="citirlahmacun">Çıtır Lahmacun</option>
@@ -84,14 +84,14 @@
 
             <div class="reservation-box datetime">
               <div class="relative">
-                <input type="date" id="datePicker" class="title-change" placeholder="dd-mm-yyyy" value="" required>
+                <input id="datePicker" type="date" class="title-change" required>
                 <h3>Tarih Seçin</h3>
               </div>
             </div>
 
             <div class="reservation-box">
               <div class="relative">
-                <select class="title-change" name="guests" required>
+                <select id="guest" class="title-change" name="guests" required>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -106,13 +106,13 @@
 
             <div class="reservation-box">
               <div class="relative">
-                <textarea class="title-change" cols="37" rows="6"></textarea>
+                <textarea id="message" class="title-change" cols="37" rows="6"></textarea>
                 <h3>Mesajınız</h3>
               </div>
             </div>
 
             <div class="reservation-box btn">
-              <button type="submit">Rezervasyon Oluştur</button>
+              <button id ="reservation-btn" type="submit">Rezervasyon Oluştur</button>
             </div>
           </form>
         </div>
@@ -186,8 +186,10 @@
 
   </main>
 
+
   <script src="../js/jquery.min.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/reservation.js"></script>
 </body>
 
 </html>

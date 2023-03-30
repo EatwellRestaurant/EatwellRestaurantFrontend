@@ -1,43 +1,17 @@
-const apiUrl = "https://localhost:44398/api/branchs/getall";
-const urlContoller = ""
+// const apiUrl = "https://localhost:44398/api/branchs/getall";
+// const urlContoller = ""
 
-async function getData() {
-    // API'ye istek gönderme
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+// async function getData() {
+//     // API'ye istek gönderme
+//     const response = await fetch(apiUrl);
+//     const data = await response.json();
 
-    // API'den veri alma
-    console.log(data);
-}
+//     // API'den veri alma
+//     console.log(data);
+// }
 
-getData();
+// getData();
 
-
-//datetime - format
-function format(inputDate) {
-    let date, month, year;
-
-    date = inputDate.getDate();
-    month = inputDate.getMonth() + 1; 
-    year = inputDate.getFullYear();
-
-    //Bu değerlere sahip olduğunuzda, gerektiğinde aya ve tarihe 0 ekleyebilirsiniz:
-    if (date < 10) {
-        date = '0' + date;
-    }
-    
-    if (month < 10) {
-        month = '0' + month;
-    }
-    
-    date = date.toString().padStart(2, '0');  //İlk parametrede string'in kaç karakter uzunluğunda olacağını,
-                                                
-    month = month.toString().padStart(2, '0');  //ikinci parametrede ise doldurulacak dizeyi belirleriz.
-    //Bu durumda, ayın veya tarihin değerinin her zaman iki basamaklı olmasını isteriz. 
-    //Değer ya 0 ile başlamalı ya da doğal olarak iki basamaklı olmalıdır.
-
-    return `${date}/${month}/${year}`;
-}
 
 
 //datetime min-max
@@ -52,8 +26,6 @@ element.min = new Date().toISOString().split("T")[0];
 element.max = new Date().addDays(35).toISOString().split("T")[0];
 
 element.innerHTML = format(element.value);
-
-
 
 
 
