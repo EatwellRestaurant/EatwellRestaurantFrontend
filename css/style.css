@@ -318,6 +318,7 @@ header .header-text{
     border-right: 2px solid #ffc515;
     font-size: 1.5rem;
     text-align: center;
+    color: #aaa;
 }
 
 .content:last-child{
@@ -327,7 +328,7 @@ header .header-text{
 .content h5{
     font-size: 2.7rem;
     margin-bottom: 20px;
-    
+    color: #fff;
 }
 
 .content .information{
@@ -339,7 +340,6 @@ header .header-text{
 }
 
 .content span{
-    color: #aaaaaa;
     text-align: center;
 }
 

@@ -10,24 +10,6 @@ const messageArea = document.getElementById("message");
 const getReservation = document.getElementById("reservation-btn");
 const warn = document.getElementById("warn");
 
-// The guests and branch format are adjusted to the back-end
-let branchNumber = Number(branchName.value);
-let guestsNumber = Number(guestNumber.value);
-
-
-// Splitting the full name information from the user into two as first and last name
-const nameArray = fullName.value.split(" ");
-let firstName = "";
-let lastName = "";
-for (let i=0; i < nameArray.length; i++) {
-    if(i == nameArray.length - 1) {
-        lastName = nameArray[i];
-    }
-    else {
-        firstName += nameArray[i] + " ";
-    }
-};
-
 
 function hideWarn() {
     warn.style.display = "none";
@@ -38,16 +20,16 @@ phoneNumber.addEventListener('input', function () {
 
     // Delete and show warning if input value contains non-numeric character
 
-    if (/\D/g.test(phoneInput.value)) {
+    if (/[^0-9 ]/g.test(phoneNumber.value)) {
         warn.classList.add("warn");
         warn.textContent = "Lütfen yalnızca sayısal karakter kullanın.";
-        phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '');
+        phoneNumber.value = phoneNumber.value.replace(/[^0-9 ]/g, '');
         setTimeout(hideWarn, 5000);
-        phoneInput.value = phoneInput.value.substring(0, phoneInput.value.length - 1);
+        warn.style.display = "inline";
     }
-
-    warn.style.display = "inline";
 });
+
+
 
 
 $.ajax({
@@ -71,9 +53,9 @@ $.get( "https://localhost:44398/api/branchs/getall", function( data ) {
     for(let i=0; i < incomingData.length; i++){
 
         if(i == 2){
-            $('.address').append(incomingData[i].address)
-            $('.email').append(incomingData[i].email)
-            $('.phone').append(incomingData[i].phone)
+            $('#footer-address').append(incomingData[i].address)
+            $('#footer-email').append(incomingData[i].email)
+            $('#footer-phone').append(incomingData[i].phone)
         }
     }
 
@@ -83,15 +65,36 @@ $.get( "https://localhost:44398/api/branchs/getall", function( data ) {
 
 
 
-
-
 // Sending data to API with reservation button
 getReservation.addEventListener("click", (e) => {
 
+    // Splitting the full name information from the user into two as first and last name
+    const nameArray = fullName.value.split(" ");
+    let firstName = "";
+    let lastName = "";
+    for (let i=0; i < nameArray.length; i++) {
+        if(i == nameArray.length - 1) {
+            lastName = nameArray[i];
+        }
+        else {
+        firstName += nameArray[i] + " ";
+        }
+    };
+
+    // The guests and branch format are adjusted to the back-end
+    let branchNumber = Number(branchName.value);
+    let guestsNumber = Number(guestNumber.value);
     e.preventDefault()
 
-    // user information is converted to json format and sent to api
+    if(!phoneNumber.value.startsWith("0")){  
+        phoneNumber.value = "0" + phoneNumber.value;
+    }
 
+    phoneNumber.value = phoneNumber.value.replace(/(\d{4})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+    console.log(phoneNumber.value);
+
+    // user information is converted to json format and sent to api
+    
     $(document).ready(function () {
         let reservation = {
             "firstName": `${firstName}`,
@@ -122,7 +125,8 @@ getReservation.addEventListener("click", (e) => {
             },
             error:  function (jqXHR, textStatus, errorThrown) {
                 console.log(`Veri gönderilirken bir hata meydana geldi: ${textStatus}, ${errorThrown}`);
-
+                
+                console.log(phoneNumber.value);
             }
         });
 
