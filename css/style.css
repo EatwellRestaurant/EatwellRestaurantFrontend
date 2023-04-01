@@ -316,6 +316,8 @@ header .header-text{
     flex: 1 0 0;
     padding: 50px 60px;
     border-right: 2px solid #ffc515;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .content:last-child{
@@ -325,16 +327,23 @@ header .header-text{
 .content h5{
     font-size: 2.7rem;
     margin-bottom: 20px;
-    text-align: center;
+    
 }
 
-.content p{
-    font-size: 1.5rem;
+.content .information{
+    flex-direction: column;
+}
+
+.content .information div:first-child{
+    margin-bottom: 15px;
+}
+
+.content span{
     color: #aaaaaa;
     text-align: center;
 }
 
-.content p i{
+.content i{
     margin-right: 5px;
     margin-bottom: 5px;
 }

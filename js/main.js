@@ -25,7 +25,6 @@ let element = document.getElementById("datePicker");
 element.min = new Date().toISOString().split("T")[0];
 element.max = new Date().addDays(35).toISOString().split("T")[0];
 
-element.innerHTML = format(element.value);
 
 
 
