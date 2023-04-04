@@ -56,6 +56,10 @@ $.get( "https://localhost:44398/api/branchs/getall", function( data ) {
             $('#footer-address').append(incomingData[i].address)
             $('#footer-email').append(incomingData[i].email)
             $('#footer-phone').append(incomingData[i].phone)
+            $('.facebook').attr("href", incomingData[i].facebook);
+            $('.instagram').attr("href", incomingData[i].instagram);
+            $('.twitter').attr("href", incomingData[i].twitter);
+            $('.google').attr("href", incomingData[i].gmail);
         }
     }
 

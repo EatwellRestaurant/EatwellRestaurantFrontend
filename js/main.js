@@ -1,19 +1,3 @@
-// const apiUrl = "https://localhost:44398/api/branchs/getall";
-// const urlContoller = ""
-
-// async function getData() {
-//     // API'ye istek gönderme
-//     const response = await fetch(apiUrl);
-//     const data = await response.json();
-
-//     // API'den veri alma
-//     console.log(data);
-// }
-
-// getData();
-
-
-
 //datetime min-max
 Date.prototype.addDays = function(days) {
     var date = new Date(this.valueOf());
@@ -24,7 +8,6 @@ Date.prototype.addDays = function(days) {
 let element = document.getElementById("datePicker");
 element.min = new Date().toISOString().split("T")[0];
 element.max = new Date().addDays(35).toISOString().split("T")[0];
-
 
 
 
