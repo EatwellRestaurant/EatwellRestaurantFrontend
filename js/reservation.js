@@ -1,3 +1,16 @@
+//datetime min-max
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+let element = document.getElementById("datePicker");
+element.min = new Date().toISOString().split("T")[0];
+element.max = new Date().addDays(30).toISOString().split("T")[0];
+
+
+
 // Selection of form elements
 const fullName = document.getElementById("name-surname");
 const email = document.getElementById("email");
@@ -29,42 +42,6 @@ phoneNumber.addEventListener('input', function () {
     }
 });
 
-
-
-
-$.ajax({
-    url: "https://localhost:44398/api/branchs/getall",
-    dataType: "json",
-    success: response => {
-        for(let key in response) {
-            console.log(key + ":", response[key]);
-        }
-    },
-    error:  function (jqXHR, textStatus, errorThrown) {
-        console.log(`Veri alınırken bir hata oluştu: ${textStatus}, ${errorThrown}`);
-
-    }
-});
-
-$.get( "https://localhost:44398/api/branchs/getall", function( data ) {
-    
-    let incomingData = data.data;
-
-    for(let i=0; i < incomingData.length; i++){
-
-        if(i == 2){
-            $('#footer-address').append(incomingData[i].address)
-            $('#footer-email').append(incomingData[i].email)
-            $('#footer-phone').append(incomingData[i].phone)
-            $('.facebook').attr("href", incomingData[i].facebook);
-            $('.instagram').attr("href", incomingData[i].instagram);
-            $('.twitter').attr("href", incomingData[i].twitter);
-            $('.google').attr("href", incomingData[i].gmail);
-        }
-    }
-
-    console.log( "Başarılı" );
-});
 
 
 
