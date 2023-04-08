@@ -103,6 +103,7 @@ form{
     color: red;
     font-size: 1.3rem;
     display: inline;
+    position: absolute;
 }
 
 .reservation-box input:focus + .fa-solid::after,

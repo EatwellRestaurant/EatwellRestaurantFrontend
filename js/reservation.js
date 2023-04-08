@@ -72,7 +72,6 @@ getReservation.addEventListener("click", (e) => {
     }
 
     phoneNumber.value = phoneNumber.value.replace(/(\d{4})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
-    console.log(phoneNumber.value);
 
     // user information is converted to json format and sent to api
     
@@ -105,9 +104,14 @@ getReservation.addEventListener("click", (e) => {
                 }
             },
             error:  function (jqXHR, textStatus, errorThrown) {
-                console.log(`Veri gönderilirken bir hata meydana geldi: ${textStatus}, ${errorThrown}`);
+                console.log(`Veri gönderilirken bir hata meydana geldi: ${textStatus} ${errorThrown}`);
                 
-                console.log(phoneNumber.value);
+                let result = jqXHR.responseJSON;
+
+                for(let key in result) {
+                    console.log(key + ":", result[key]);
+                }
+                
             }
         });
 

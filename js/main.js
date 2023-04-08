@@ -2,12 +2,17 @@ $.ajax({
     url: "https://localhost:44398/api/branchs/getall",
     dataType: "json",
     error:  function (jqXHR, textStatus, errorThrown) {
-        console.log(`Veri alınırken bir hata oluştu: ${textStatus}, ${errorThrown}`);
+        console.log(`Veri alınırken bir hata oluştu: ${textStatus} ${errorThrown}`);
 
+        let result = jqXHR.responseJSON;
+
+        for(let key in result) {
+            console.log(key + ":", result[key]);
+        }
     }
 });
 
-$.get( "https://localhost:44398/api/branchs/getall", function( data ) {
+$.get( "https://localhost:44398/api/branchs/getall", function( data) {
     
     let incomingData = data.data;
 
@@ -24,7 +29,7 @@ $.get( "https://localhost:44398/api/branchs/getall", function( data ) {
         }
     }
 
-    console.log( "Veriler Getirildi" );
+    console.log( "Veriler Getirildi");
 });
 
 
