@@ -16,7 +16,7 @@ header::before{
     margin-top: 50px;
 }
 
-#row{
+.row{
     display: grid;
     justify-content: space-around;
     grid-template-columns: auto auto auto;

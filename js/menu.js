@@ -15,14 +15,13 @@ $.ajax({
 $.get( "https://localhost:44398/api/mealcategories/getall", function( data ) {
     
     let incomingData = data.data;
-
-    const box = []; 
+    var box="";
     for(let i=0; i < incomingData.length; i++){
         
-        let category_image = incomingData[i].imagePath;
-        let category_name = incomingData[i].name;
+        let category_image = incomingData[i].imagePath.replace("wwwroot",
+         "https://localhost:44398");
 
-        console.log(incomingData[i])
+        let category_name = incomingData[i].name;
         
         let element = `
         <div class='menu-content'>
@@ -32,24 +31,11 @@ $.get( "https://localhost:44398/api/mealcategories/getall", function( data ) {
                     <span class='name'>${category_name}</span>
                 </div>
             </a>
-         </div>
-         
-         `
-        
-        box.push(element); 
-        document.getElementById("row").innerHTML = box;
+        </div>`;
+            
+        box+=element;
 
-        
-        
-
-        // var menu = '"#menu' + [i+1] + '"';
-        // $(menu).attr("src", incomingData[i].imagePath);;
-        // var menuContent =  '';
-        // menuContent += '<div class="img-overlay flex">' 
-        // '<span class = "name">' + incomingData[i].name + '</span>' 
-        // '</div>'; 
-        
+       document.querySelector(".row").innerHTML = box;   
     }
-
-    console.log( "Veriler Getirildi" );
+    console.log( "Menüler Getirildi" );
 });
