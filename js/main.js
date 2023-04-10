@@ -1,5 +1,5 @@
 $.ajax({
-    url: "https://localhost:44398/api/branchs/getall",
+    url: "https://localhost:7189/api/branchs/getall",
     dataType: "json",
     error:  function (jqXHR, textStatus, errorThrown) {
         console.log(`Veri alınırken bir hata oluştu: ${textStatus} ${errorThrown}`);
@@ -12,7 +12,7 @@ $.ajax({
     }
 });
 
-$.get( "https://localhost:44398/api/branchs/getall", function( data) {
+$.get( "https://localhost:7189/api/branchs/getall", function( data) {
     
     let incomingData = data.data;
 

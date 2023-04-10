@@ -91,7 +91,7 @@ getReservation.addEventListener("click", (e) => {
         var model = JSON.stringify(reservation);
         
         $.ajax({
-            url: "https://localhost:44398/api/reservations/add",
+            url: "https://localhost:7189/api/reservations/add",
             contentType: "application/json",
             type: "post",
             dataType: "json",
