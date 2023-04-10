@@ -18,14 +18,17 @@ $.get( "https://localhost:7189/api/branchs/getall", function( data) {
 
     for(let i=0; i < incomingData.length; i++){
 
-        if(i == 2){
-            $('#footer-address').append(incomingData[i].address)
-            $('#footer-email').append(incomingData[i].email)
-            $('#footer-phone').append(incomingData[i].phone)
-            $('.facebook').attr("href", incomingData[i].facebook);
-            $('.instagram').attr("href", incomingData[i].instagram);
-            $('.twitter').attr("href", incomingData[i].twitter);
-            $('.google').attr("href", incomingData[i].gmail);
+        let branch = "";
+        if(incomingData[i].id == 1005){
+            
+            branch = incomingData[i];
+            $('#footer-address').append(branch.address)
+            $('#footer-email').append(branch.email)
+            $('#footer-phone').append(branch.phone)
+            $('.facebook').attr("href", branch.facebook);
+            $('.instagram').attr("href", branch.instagram);
+            $('.twitter').attr("href", branch.twitter);
+            $('.google').attr("href", branch.gmail);
         }
     }
 
