@@ -28,7 +28,7 @@ $.get( "https://localhost:7189/api/mealcategories/getall", function( data ) {
 
         let element = `
         <div class='menu-content'>
-            <a href='menu-category.html?id=${menuCategoryId}' class='menu-image'>
+            <a href='menu-category.html?id=${menuCategoryId}+${category_name}' class='menu-image'>
                 <img src='${category_image}' alt='${category_name}'>
                 <div class='img-overlay flex'>
                     <span class='name'>${category_name}</span>
@@ -44,10 +44,6 @@ $.get( "https://localhost:7189/api/mealcategories/getall", function( data ) {
     console.log( "Menüler Getirildi" );
 });
 
-
-function productsOfMenuCategory(id){
-    window.location.href = "menu-category.html?id=" + id; 
-};
 
 
 
