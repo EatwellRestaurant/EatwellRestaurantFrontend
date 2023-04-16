@@ -27,9 +27,7 @@ $.get( "https://localhost:7189/api/branchimages/getall", function( data ) {
     var box="";
     for(let i=0; i < incomingData.length; i++){
         
-        let branch_image = incomingData[i].imagePath.replace("wwwroot",
-         "https://localhost:7189");
-
+        let branch_image = incomingData[i].imagePath.replace("wwwroot","https://localhost:7189");
 
         let branch_title = incomingData[i].title;
         let branch_description = incomingData[i].description;
@@ -37,7 +35,7 @@ $.get( "https://localhost:7189/api/branchimages/getall", function( data ) {
         let element = `
         <div class='picture'>
             <div class='image-box'>
-              <img src='${branch_image}' alt=''>
+              <img src='${branch_image}' alt='${branch_title}'>
 
               <div class='transparent-box'>
                 <div class='floor'>

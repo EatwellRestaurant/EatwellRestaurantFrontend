@@ -44,12 +44,10 @@ header{
     transform: translateY(-15px);
 }
 
-.chef img{
-    width: auto;
-    height: auto;
+.chef img {
+    height: 400px;
     max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
+    object-fit: cover; 
     border-radius: 30px;
 }
 
@@ -137,6 +135,7 @@ header{
     border-radius: 50%;
     border: 3px solid #ffc515;
     margin-left: 10px;
+    padding: 3px;
 }
 
 .person span{

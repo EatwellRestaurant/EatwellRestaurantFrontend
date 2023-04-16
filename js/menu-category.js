@@ -35,7 +35,7 @@ $.ajax({
     url: "https://localhost:7189/api/products/getproductsbymealcategoryid" + "?id=" + id,
     dataType: "json",
     error:  function (jqXHR, textStatus, errorThrown) {
-        console.log(`Veri alınırken bir hata oluştu: ${textStatus} ${errorThrown}`);
+        console.log(`'Ürünler' alınırken bir hata oluştu: ${textStatus} ${errorThrown}`);
 
         let result = jqXHR.responseJSON;
 
